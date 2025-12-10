@@ -462,23 +462,20 @@ Aquest mínim determina el nombre de marcs que cal assignar al procés perquè p
 
 ## Ex03: Assignació local – Càlcul del mínim nombre de cel·les {.smaller}
 
-Suposeu que el format d’una instrucció ocupa dues paraules (mida paraula = 1 Byte):
+Suposeu que el format d’una instrucció ocupa **dues paraules** (mida paraula = 1 Byte):
 
-- **Paraula 1** = OPCODE
-- **Paraula 2** = OPERANDS, que conté els codis de mode d’adreçament dels tres operands (OP1, OP2, RES).
+- **Paraula 1** = OPCODE + **Paraula 2** = OPERANDS, que conté els codis de mode d’adreçament dels tres operands (OP1, OP2, RES).
 - Els valors o adreces referenciades pels operands no formen part de la instrucció, sinó que resideixen a cel·les de memòria independents.
 
 :::{.fragment .center-container}
-Quin és el mínim nombre de cel·les que cal assignar a un procés?
+Quin és el mínim nombre de cel·les que cal assignar a un procés? *Suposem que OP1 i OP2 són operands d’adreçament indirecte i RES és directe.*
 :::
 
 :::{.fragment}
-- Suposem que OP1 i OP2 són operands d’adreçament indirecte i RES és directe.
-- Mida de la instrucció: 2 paraules = 2 cel·les de MP
 - OP1 (indirecte): cal llegir 2 cel·les
 - OP2 (indirecte): cal llegir 2 cel·les
 - RES (directe): cal una 1 cel·la
-- Total mínim = 2 + 2 + 2 + 1 = 7 cel·les de MP
+- Total mínim = 2 (instrucció) + 2 + 2 + 1 = 7 cel·les de MP
 :::
 
 ## Assignació global {.smaller}
