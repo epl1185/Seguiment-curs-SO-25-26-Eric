@@ -23,12 +23,12 @@ execute:
 
 ## R1: Variables {.smaller}
 
-- Crea un script anomenat `variables.sh`.
-- Declara dues variables: una anomenada `NOM` amb el teu nom i una altra anomenada `EDAT` amb la teva edat.
-- Fes que l'script imprimeixi el missatge: `Hola, el meu nom és [NOM] i tinc [EDAT] anys.`
+-   Crea un script anomenat `variables.sh`.
+-   Declara dues variables: una anomenada `NOM` amb el teu nom i una altra anomenada `EDAT` amb la teva edat.
+-   Fes que l'script imprimeixi el missatge: `Hola, el meu nom és [NOM] i tinc [EDAT] anys.`
 
-1. Defineix les variables `NOM` i `EDAT` dins de l'script.
-2. Defineix les variables `NOM` i `EDAT` com a variables d'entorn abans d'executar l'script.
+1.  Defineix les variables `NOM` i `EDAT` dins de l'script.
+2.  Defineix les variables `NOM` i `EDAT` com a variables d'entorn abans d'executar l'script.
 
 ::: notes
 ``` bash
@@ -37,7 +37,9 @@ NOM="Jordi"
 EDAT=30
 echo "Hola, el meu nom és $NOM i tinc $EDAT anys."
 ```
+
 Per definir les variables com a variables d'entorn:
+
 ``` bash
 export NOM="Jordi"
 export EDAT=30
@@ -47,10 +49,9 @@ export EDAT=30
 
 ## R2: Les variables sempre són cadenes {.smaller}
 
-- Crea un script anomenat `suma.sh`.
-- Declara dues variables anomenades `NUM1` i `NUM2` amb valors numèrics.
-- Fes que l'script sumi els valors de `NUM1` i `NUM2` i imprimeixi el resultat.
-
+-   Crea un script anomenat `suma.sh`.
+-   Declara dues variables anomenades `NUM1` i `NUM2` amb valors numèrics.
+-   Fes que l'script sumi els valors de `NUM1` i `NUM2` i imprimeixi el resultat.
 
 ::: notes
 ``` bash
@@ -63,14 +64,15 @@ echo "La suma de $NUM1 i $NUM2 és: $NUM1 + $NUM2"
 
 ## R3: Aritmètica {.smaller}
 
-- Modifica l'script `suma.sh` per realitzar la suma correcta dels valors numèrics de `NUM1` i `NUM2`.
-- `let RESULTAT=NUM1+NUM2`
-- `RESULTAT=$((NUM1 + NUM2))`
-- `RESULTAT=$(expr $NUM1 + $NUM2)`
-- Fes servir `$(( ))`, que és l’opció moderna.
+-   Modifica l'script `suma.sh` per realitzar la suma correcta dels valors numèrics de `NUM1` i `NUM2`.
+-   `let RESULTAT=NUM1+NUM2`
+-   `RESULTAT=$((NUM1 + NUM2))`
+-   `RESULTAT=$(expr $NUM1 + $NUM2)`
+-   Fes servir `$(( ))`, que és l’opció moderna.
 
 ::: notes
 Hi ha 3 maneres comunes de fer operacions aritmètiques en bash:
+
 ``` bash
 #!/bin/bash
 NUM1=5
@@ -86,14 +88,13 @@ echo "La suma de $NUM1 i $NUM2 és: $RESULTAT"
 ```
 
 La diferència principal entre les tres maneres és la sintaxi i l'ús. `let` és específic de bash, `$(( ))` és una sintaxi més moderna i portàtil, i `expr` és una comanda externa que pot ser menys eficient.
-
 :::
 
 ## R4: Calculadora bàsica {.smaller}
 
-- Crea un script anomenat `calculadora.sh`.
-- Llegeix dos números i una operació (suma, resta, multiplicació, divisió) com a arguments de línia de comandes.
-- Realitza l'operació i mostra el resultat.
+-   Crea un script anomenat `calculadora.sh`.
+-   Llegeix dos números i una operació (suma, resta, multiplicació, divisió) com a arguments de línia de comandes.
+-   Realitza l'operació i mostra el resultat.
 
 ::: notes
 ``` bash
@@ -115,22 +116,21 @@ echo "El resultat de la $OPERACIO entre $NUM1 i $NUM2 és: $RESULTAT"
 
 ## R5: Arrays bàsics {.smaller}
 
-- Crea un script arrays.sh.
-- Declara un array amb 4 fruites del diable 
-- Declara un altre array amb 4 usuaris d’aquestes fruites.
-- Llista quin personatge té quina fruita.
+-   Crea un script arrays.sh.
+-   Declara un array amb 4 fruites del diable
+-   Declara un altre array amb 4 usuaris d’aquestes fruites.
+-   Llista quin personatge té quina fruita.
 
-
-:::{.fragment}
-| Fruita del diable           | Usuari                      |
-|-----------------------------|-----------------------------|
-| Hito-Hito no Mi             | Luffy                       |
-| Mera-Mera no Mi             | Ace/Sabo                    |
-| Gura-Gura no Mi             | Barbablanca/Barbanegra      |
-| Magu-Magu no Mi             | Akainu                      |
+::: fragment
+| Fruita del diable | Usuari                 |
+|-------------------|------------------------|
+| Hito-Hito no Mi   | Luffy                  |
+| Mera-Mera no Mi   | Ace/Sabo               |
+| Gura-Gura no Mi   | Barbablanca/Barbanegra |
+| Magu-Magu no Mi   | Akainu                 |
 :::
 
-:::{.fragment .center-container}
+::: {.fragment .center-container}
 Els array en bash són indexats començant des de 0.
 :::
 
@@ -157,26 +157,23 @@ for i in ${!FRUITES[@]}; do
     echo "${USUARIS[i]} ha menjat la fruita: ${FRUITES[i]}"
 done
 ```
-
-
 :::
 
 ## R6: Diccionaris bàsics {.smaller}
 
-- Crea un script anomenat `diccionaris.sh`.
+-   Crea un script anomenat `diccionaris.sh`.
 
-:::{.fragment}
-| Clau (Regne)        | Valor (Rei/Reina)          |
-|---------------------|----------------------------|
-| Dressrosa           | Doflamingo               |
-| WholeCake           | Big Mom                  |
-| Wano                | Kaido                    |
-| Alabasta            | Cobra                    |
+::: fragment
+| Clau (Regne) | Valor (Rei/Reina) |
+|--------------|-------------------|
+| Dressrosa    | Doflamingo        |
+| WholeCake    | Big Mom           |
+| Wano         | Kaido             |
+| Alabasta     | Cobra             |
 :::
 
-- Inicialitza un diccionari amb el contingut de la taula.
-- Fes un bucle per imprimir cada regne amb el seu rei/reina corresponent.
-
+-   Inicialitza un diccionari amb el contingut de la taula.
+-   Fes un bucle per imprimir cada regne amb el seu rei/reina corresponent.
 
 ::: notes
 ``` bash
@@ -198,11 +195,10 @@ done
 
 ## R7: Joc de les relacions {.smaller}
 
-- Mostra els personatges disponibles.
-- Demana a l’usuari un personatge.
-- L’usuari intenta endevinar la seva fruita del diable entre les opcions mostrades.
-- L’script diu si ha encertat.
-
+-   Mostra els personatges disponibles.
+-   Demana a l’usuari un personatge.
+-   L’usuari intenta endevinar la seva fruita del diable entre les opcions mostrades.
+-   L’script diu si ha encertat.
 
 ::: notes
 ``` bash
@@ -232,12 +228,11 @@ read R
 ```
 :::
 
-
 ## CH01 {.smaller}
 
 Analitzeu el codi següent i digueu quin és el resultat de l'execució d'aquest script. Raoneu la resposta. Indicant per que el resultat és diferent del que s'espera.
 
-```bash
+``` bash
 cat > ch01.data << 'EOT'
 102
 071
@@ -264,14 +259,14 @@ El resultat és diferent del que s'espera perquè el nombre 071 no és un nombre
 
 Per assegurar-nos que els nombres que llegim són nombres decimals, podem utilitzar la comanda bc. Aquesta comanda ens permet avaluar expressions aritmètiques. Per exemple, per avaluar l'expressió aritmètica 071:
 
-```bash
+``` bash
 echo "071" | bc
 # Resultat: 71
 ```
 
 Per tant, podem millorar el script anterior de la següent manera:
 
-```bash
+``` bash
 #!/bin/bash
 # Nom: ch01.sh
 

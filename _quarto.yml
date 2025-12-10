@@ -63,6 +63,8 @@ website:
             text: Unitat 05 · Interbloqueig (Deadlock)
           - href: ./slides/06-mem.qmd
             text: Unitat 06 · Gestió de memòria (I)
+          - href: ./slides/06-mem-part2.qmd
+            text: Unitat 06 · Gestió de memòria (II)
           
       - section: Apunts
         contents:
