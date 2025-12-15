@@ -39,4 +39,6 @@ A continuació es presenta un calendari complet dels temes, el contingut del cur
  | 13   | Teoria/Laboratori  |01/12/25    | **Unitat 06**: Memòria (I)   | [📖](../slides/06-mem.html#prepare)   | | [👩🏻‍💻](../labs/07-shell/02-shell.qmd)  |  | [📄](../activities/unit07/challenge01.qmd)    |  |
   | 14   | Festiu |08/12/25    |   |   |  |  |     |   |
  | 14   | Teoria/Laboratori  |10/12/25    | **Unitat 06**: Memòria (II)   | [📖](../slides/06-mem-part2.html#prepare)   |  |  |     |   |
+ | 15   | Teoria/Laboratori  |15/12/25    | **Unitat 06**: Memòria (II) / Scripting   |   |  |  |     |   |
+| 15   | Teoria/Laboratori  |17/12/25    | **Repàs**   |   |  |  |     |   |
 ::: 

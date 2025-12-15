@@ -65,6 +65,8 @@ website:
             text: Unitat 06 · Gestió de memòria (I)
           - href: ./slides/06-mem-part2.qmd
             text: Unitat 06 · Gestió de memòria (II)
+          - href: ./slides/07-shell.pdf
+            text: Unitat 07 · Shell Scripting
           
       - section: Apunts
         contents:
@@ -148,16 +150,22 @@ website:
                 text: Problemes · Planificació de processos (I)
               - href: ./activities/unit03/02-sched.qmd
                 text: Problemes · Planificació de processos (II)
+          - section: Unitat 05
+            contents:
+              - href: ./activities/unit04/dead.qmd
+                text: Problemes · Interbloqueig (Deadlock)
+          - section: Unitat 06
+            contents:
+              - href: ./activities/unit05/mem.qmd
+                text: Problemes · Gestió de memòria
+              - href: ./activities/unit05/vmem.qmd
+                text: Problemes · Gestió de memòria (II)
 
           - section: Unitat 07
             contents:
               - href: ./activities/unit07/challenge01.qmd
                 text: Challenge 01 · Tic Tac Toe en Bash
-          
-              
-
-
-  
+            
 format:
   html:
     toc: true
