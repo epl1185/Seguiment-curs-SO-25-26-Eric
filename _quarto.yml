@@ -164,7 +164,15 @@ website:
           - section: Unitat 07
             contents:
               - href: ./activities/unit07/challenge01.qmd
-                text: Challenge 01 · Tic Tac Toe en Bash
+                text: Challenge 01 · Calcula la mitjana d'una llista de nombres enters
+              - href: ./activities/unit07/challenge02.qmd
+                text: Challenge 02 · Comparació de nombres en Bash
+              - href: ./activities/unit07/challenge03.qmd
+                text: Challenge 03 · Desxifrant el codi
+              - href: ./activities/unit07/challenge04.qmd
+                text: Challenge 04 · Acrònims
+              - href: ./activities/unit07/challenge05.qmd
+                text: Challenge 05 · Tic Tac Toe en Bash
             
 format:
   html:
