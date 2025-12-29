@@ -1,0 +1,59 @@
+# Problemes de Gestió de Memòria
+
+1. Suposa un sistema operatiu amb un **únic espai d'adreçament lògic**, on algunes adreces estan reservades pel nucli (*kernel*) i altres per l'espai d'usuari (*user*). Aquest sistema operatiu, de **64 bits**, pot gestionar com a màxim **4.194.304** processos a la seva taula de processos. A més, al nucli se li assigna la meitat de l'espai d'adreces lògiques. Si l'espai d'adreces lògiques es divideix equitativament entre tots els processos, **quin és l'espai mínim d'adreces lògiques que es reservaria per a cada procés quan hi ha el màxim nombre de processos en execució?**
+
+    
+2. Considereu un sistema de particions múltiples on les particions a memoria principal són de mida fixa i en l'ordre següent:
+
+    | Partició | Mida (MBytes) |
+    | -------- | ------------- |
+    | 1        | 10            |
+    | 2        | 4             |
+    | 3        | 20            |
+    | 4        | 18            |
+    | 5        | 7             |
+    | 6        | 9             |
+    | 7        | 12            |
+    | 8        | 15            |
+
+    a. Si la política d'assignació és **First Fit**, quina partició s'assignarà per processos successius de *12MBytes, 10MBytes i 9MBytes*?
+    b. Si la política d'assignació és **Best-Available-Fit**, quina partició s'assignarà per processos successius de *12MBytes, 10MBytes i 9MBytes*?
+    c. Si la política d'assignació és **Best-Fit-Only**, quina partició s'assignarà per processos successius de *12MBytes, 12MBytes i 9MBytes*?
+
+
+3. Assumeix un sistema de paginació amb una mida de pàgina **P**. Determina una fòrmula que determini la direcció física **F** a partir de la direcció lògica **L**. Pots assumir que tp(p) retorna el contingut de la taula de pàgines a la posició p.
+
+4. Suposem que disposem d’un sistema de gestió de la **Memòria Principal (MP)** del tipus paginat, amb una mida de pàgina (cel·la) de *8 KBytes*. La mida d’una paraula és *1 Byte* i la mida de MP és *4 MBytes*. La mida màxima d’un procés és *64 KBytes*. **La taula de pàgines h/w s’implementa en MP**.
+
+   a. Esquema de traducció d’adreces lògiques a físiques, amb totes les mides de les estructures (o registres que hi apareguin). Poseu-hi també el(s) multiplicador(s) que cregueu convenient(s).
+
+   b. Donat un procés **P1**, amb una mida total de 18 KBytes, es demana:
+
+    - Rang d’adreçament lògic de P1.
+    - Fragmentació interna i externa total suposant que no hi ha cap més procés carregat en el sistema.
+    - Rang d'adreçament físic de P1.
+
+
+5. Disposem d’un sistema de gestió de la memòria segmentat. La Mida de Memòria Principal és de 1MByte. Un procés consta de com a molt 8 segments. La mida màxima d’un segment és 4KBytes. La taula de segments s'implementa en Memòria Principal. Donats els dos processos següents:
+
+    | Segment | Mida        | Procés 1 | Procés 2 |
+    | ------- | ----        | -------- | -------- |
+    | Codi (A)| 100 bytes   | X        | X        |
+    | Codi (B)| 120 bytes   |          | X        |
+    | Dades (D)| 14 bytes   | X        | X        |
+    | Dades (E)| 90 bytes   | X        |          |
+
+    Les X’s en la taula indiquen quins procediments i dades estan assignats a cada procés. Una fila amb dos o més X’s indica que el segment està compartit. A més, cada procés està format per un segment d’stack de 64 Bytes.
+
+    a. Doneu un exemple que mostri quina és la informació i la seva mida (en bytes), que ha de guardar el s.o. per tal de poder fer la traducció d’adreces dels dos processos quan aquests executin dins de la CPU.
+
+
+6. Disposem d’un sistema de gestió de Memòria del tipus segmentació paginada. La mida d’una pàgina és de 512 paraules. La mida d’una paraula és igual a un Byte. Mida pàgina = Mida cel la. Un segment conté com a molt 4 pàgines. Un procés conté com a molt 8 segments. En la següent figura es pot veure el
+contingut de MP:
+
+    ![Contingut de la Memòria Principal](../../figures/activities/unit06/seg-pag-enunciat.png)
+
+    a. Esquema de traducció d’adreces lògiques a físiques, amb totes les mides de les estructures (o registres que hi apareguin). Poseu-hi també el(s) multiplicador(s) que cregueu convenient(s).
+    b. Doneu un exemple de la informació (és a dir, d’una possible taula de segments,de les taules de pàgines i registres), que ha de guardar el sistema operatiu per gestionar la memòria del procés P1. Suposeu per fer-ho que totes les cel·les de P1 i P2 estan plenes. Suposeu també que tota la informació s’ha de posar a partir del començament de la cel la 61 i que aquesta informació ha d’ocupar el mínim espai possible.
+    c. Doneu el rang d’adreçament lògic de P1.
+    d. Quina és l'adreça lògica corresponent a l'adreça física 2050?

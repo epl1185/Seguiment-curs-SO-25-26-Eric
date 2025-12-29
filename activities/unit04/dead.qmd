@@ -1,0 +1,86 @@
+# Problemes de Deadlocks
+
+1. Un sistema conté 2 processos (**A i B**). Hi ha *tres recursos **R1***. Cada procés necessita un màxim de 2 recursos **R1**. Es possible un interbloqueig en aquesta situació? Raoneu la resposta.
+
+2. Imagina tres processos **A,B,C** i dos recursos **R1 (1)**  i **R2 (2)**.
+
+   - A soilicita 1 instancia de R1 i el sistema operatiu li condedeix.
+   - B sol·licita 1 instancia de R2 i el sistema operatiu li concedeix.
+   - C sol·licita 1 instancia de R2 i el sistema operatiu li concedeix.
+   - B sol·licita 1 instancia de R1 i el sistema operatiu li bloqueja.
+   - A sol·licita 1 instancia de R2 i el sistema operatiu li bloqueja.
+
+    a. Aquesta situació és un interbloqueig? Raoneu la resposta.
+    b. Es compleixen les quatre condicions de Coffman per a un interbloqueig?
+
+
+3. Es possible un interbloqueig amb processos que no estan involucrats en el cicle de processos que esperen recursos? Raoneu la resposta i doneu un exemple.
+
+
+4. En un sistema format per 4 processos $(p_1, p_2, p_3, p_4)$ i 1 únic recurs de cada tipus $(r_0, r_1, r_2, r_3, \ldots)$, Raona si es possible un interbloqueig partint del següent graf d'espera:
+
+    ![Graf d'espera](../../figures/activities/unit05/graf-espera-deteccio.png)
+
+
+5. Considereu un sistema amb 4 processos i 5 tipus de recursos amb múltiples instàncies. L'estat inicial del sistema és el següent:
+
+    $$
+    \begin{gathered}
+    \text{Assignat} =
+    \begin{bmatrix}
+    0 & 1 & 1 & 1 & 2 \\\\
+    0 & 1 & 0 & 1 & 0 \\\\
+    0 & 0 & 0 & 0 & 1 \\\\
+    2 & 1 & 0 & 0 & 0
+    \end{bmatrix}
+    \text{   Necessitat} =
+    \begin{bmatrix}
+    1 & 1 & 0 & 2 & 1 \\\\
+    0 & 1 & 0 & 2 & 1 \\\\
+    0 & 2 & 0 & 3 & 1 \\\\
+    0 & 2 & 1 & 1 & 0
+    \end{bmatrix}
+    \\\\
+    \\\\
+    \text{   Disponible} =
+    \begin{bmatrix}
+    0 & 1 & 0 & 2 & 1
+    \end{bmatrix}
+    \text{   Total} =
+    \begin{bmatrix}
+    2 & 4 & 1 & 4 & 4
+    \end{bmatrix}
+    \end{gathered}
+    $$
+
+    Raoneu si el sistema es troba en un interbloqueix. En cas afirmatiu, indiqueu quins processos estan involucrats en el interbloqueix.
+
+
+6. Assumirem un sistema amb 5 processos $( p_0, p_1, p_2, p_3, p_4)$ i 3 tipus de recursos $(r_{0},r_{1},r_{2})$. Donat l'estat inicial del sistema, volem saber si el sistema concediria la següent sol·licitud $( Sol·licitud_{1}(1,0,2))$? Raoneu la resposta assumint que el sistema utilitza l'algorisme del banquer i l'algorisme de seguretat.
+
+    $$
+    \begin{gathered}
+    \text{Assignat} =
+    \begin{bmatrix}
+    0 & 1 & 0 \\\\
+    2 & 0 & 0 \\\\
+    3 & 0 & 2 \\\\
+    2 & 1 & 1 \\\\
+    0 & 0 & 2
+    \end{bmatrix}
+    \text{   Necessitat} =
+    \begin{bmatrix}
+    7 & 4 & 3 \\\\
+    1 & 2 & 2 \\\\
+    6 & 0 & 0 \\\\
+    0 & 1 & 1 \\\\
+    4 & 3 & 1
+    \end{bmatrix}
+    \text{   Disponible} =
+    \begin{bmatrix}
+    3 & 3 & 2
+    \end{bmatrix}
+    \end{gathered}
+    $$
+
+7. Imagineu un sistema amb 1 únic tipus de recurs (A) que disposa de múltiples unitats. En aquest sistema s’executen P processos on cada proces pot sol·licitar K unitats del recurs A. Quin nombre mínim d’unitats del recurs A és necessari per evitar l’interbloqueig?

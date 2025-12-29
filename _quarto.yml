@@ -53,6 +53,21 @@ website:
             text: Unitat 03 · Comunicació entre processos
           - href: ./slides/03-pipes.qmd
             text: Unitat 03 · Pipes
+          - href: ./slides/04-sched.qmd
+            text: Unitat 04 · Planificació de processos
+          - href: ./slides/04-sched-part2.qmd
+            text: Unitat 04 · Planificació de processos · Justícia
+          - href: ./slides/04-sched-part3.qmd
+            text: Unitat 04 · Planificació de processos · Linux
+          - href: ./slides/05-deadlock.qmd
+            text: Unitat 05 · Interbloqueig (Deadlock)
+          - href: ./slides/06-mem.qmd
+            text: Unitat 06 · Gestió de memòria (I)
+          - href: ./slides/06-mem-part2.qmd
+            text: Unitat 06 · Gestió de memòria (II)
+          - href: ./slides/07-shell.pdf
+            text: Unitat 07 · Shell Scripting
+          
       - section: Apunts
         contents:
           - href: ./notes/01-introduction.qmd
@@ -93,11 +108,22 @@ website:
                 text: Laboratori 11 · OhMySudo!
               - href: ./labs/05-procs/lab02.qmd
                 text: Laboratori 12 · Escape Room amb processos i pipes
-              
+          - section: Unitat 04
+            contents:
+              - href: ./labs/06-sched/01-simulador.qmd
+                text: Laboratori 13 · Simulador d'algorismes de planificació de processos
+          - section: Unitat 07
+            contents:
+              - href: ./labs/07-shell/01-shell.qmd
+                text: Laboratori 14 · Laboratori de Shell Scripting (I)
+              - href: ./labs/07-shell/02-shell.qmd
+                text: Laboratori 15 · Laboratori de Shell Scripting (II)
       - section: Projectes
         contents:
           - href: ./projects/project01.qmd
             text: Pràctica 01 · Manipulació de Cadenes de Caràcters en C
+          - href: ./projects/project02.qmd
+            text: Pràctica 02 · Implementació d'una Shell en C
       - section: Activitats
         contents:
           - section: Unitat 01
@@ -118,9 +144,36 @@ website:
                 text: Exercici · Creació de processos
               - href: ./activities/unit02/02-pipes.qmd
                 text: Exercici · Pipes i redireccions
+          - section: Unitat 04
+            contents:
+              - href: ./activities/unit03/01-sched.qmd
+                text: Problemes · Planificació de processos (I)
+              - href: ./activities/unit03/02-sched.qmd
+                text: Problemes · Planificació de processos (II)
+          - section: Unitat 05
+            contents:
+              - href: ./activities/unit04/dead.qmd
+                text: Problemes · Interbloqueig (Deadlock)
+          - section: Unitat 06
+            contents:
+              - href: ./activities/unit05/mem.qmd
+                text: Problemes · Gestió de memòria
+              - href: ./activities/unit05/vmem.qmd
+                text: Problemes · Gestió de memòria (II)
 
-
-  
+          - section: Unitat 07
+            contents:
+              - href: ./activities/unit07/challenge01.qmd
+                text: Challenge 01 · Calcula la mitjana d'una llista de nombres enters
+              - href: ./activities/unit07/challenge02.qmd
+                text: Challenge 02 · Comparació de nombres en Bash
+              - href: ./activities/unit07/challenge03.qmd
+                text: Challenge 03 · Desxifrant el codi
+              - href: ./activities/unit07/challenge04.qmd
+                text: Challenge 04 · Acrònims
+              - href: ./activities/unit07/challenge05.qmd
+                text: Challenge 05 · Tic Tac Toe en Bash
+            
 format:
   html:
     toc: true

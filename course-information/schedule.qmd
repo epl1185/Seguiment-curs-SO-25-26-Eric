@@ -26,6 +26,19 @@ A continuació es presenta un calendari complet dels temes, el contingut del cur
 | 6    | Laboratori         |15/10/25    | Vaga general   |    |  |   |      |
 | 7    | Teoria/Laboratori  |20/10/25    | **Unitat 03**: Pipes   | [📖](../slides/03-pipes.html#prepare)   |  |  |      |[👩🏻‍💻](../activities/unit02/02-pipes.qmd)
 | 7    | Laboratori  |20/10/25    | **Unitat 03**   |   | | [📄](../labs/05-procs/lab02.qmd)  |  |      |
-
-
+| 8    | Teoria  |27/10/25    | **Repàs**   |    |  |  |      |
+| 8    | Teoria  |29/10/25    | **Repàs**   |    |  |  |     | [🔨](../projects/project02.qmd) | |
+| 9 | PARCIALS | |  |   |   |   |   |   |   |   |   |
+| 10    | Teoria/Laboratori  |10/11/25    | **Unitat 04**: Planificació de processos   | [📖](../slides/04-sched.html#prepare)   |  |   | | [👩🏻‍💻](../activities/unit03/01-sched.qmd) |   | 
+| 10    | Teoria/Laboratori  |12/11/25    | **Unitat 04**: Planificació de processos (II)   | [📖](../slides/04-sched-part2.qmd)   |  | [📄](../labs/06-sched/01-simulador.qmd)  |    [📚](../readings/eevdf.pdf)
+| 11    | Teoria/Laboratori  |17/11/25    | **Unitat 04**: Planificació de processos (III)   | [📖](../slides/04-sched-part3.qmd)   |  |  |     |
+| 11    | Teoria/Laboratori  |19/11/25    | **Unitat 04**: Planificació de processos (III)   |  |    | [👩🏻‍💻](../activities/unit03/02-sched.qmd) |  |    |
+| 12   | Teoria/Laboratori  |24/11/25    | **Unitat 05**: Interbloqueig (Deadlock)   | [📖](../slides/05-deadlock.html#prepare)   |  |  |     |   |
+| 12   | Laboratori  |26/11/25    | **Pràctiques**   |    |  |  |     |   |
+| 13   | Teoria/Laboratori  |01/12/25    | **Unitat 06**: Memòria (I)   | [📖](../slides/06-mem.html#prepare)   | | [👩🏻‍💻](../labs/07-shell/01-shell.qmd)  |  |     |  |
+ | 13   | Teoria/Laboratori  |01/12/25    | **Unitat 06**: Memòria (I)   | [📖](../slides/06-mem.html#prepare)   | | [👩🏻‍💻](../labs/07-shell/02-shell.qmd)  |  | [📄](../activities/unit07/challenge01.qmd)    |  |
+  | 14   | Festiu |08/12/25    |   |   |  |  |     |   |
+ | 14   | Teoria/Laboratori  |10/12/25    | **Unitat 06**: Memòria (II)   | [📖](../slides/06-mem-part2.html#prepare)   |  |  |     |   |
+ | 15   | Teoria/Laboratori  |15/12/25    | **Unitat 06**: Memòria (II) / Scripting   |   |  |  |     |   |
+| 15   | Teoria/Laboratori  |17/12/25    | **Repàs**   |   |  |  |     |   |
 ::: 

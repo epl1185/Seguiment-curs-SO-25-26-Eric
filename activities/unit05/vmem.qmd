@@ -1,0 +1,72 @@
+# Problemes de Gestió de Memòria Virtual
+
+1. Disposem d’un sistema de gestió de la memòria del tipus **segmentació paginada** i **Memòria Virtual** del tipus **paginació sota demanda**.
+
+   - Assignació **local** de cel·les (**5 cel·les per procés**).
+   - La mida d’una **pàgina** i d’una **cel·la** és de **16 Bytes**.
+   - Mida d’una **instrucció** = mida d’una **paraula** = mida d’un **enter** = **1 Byte**.
+
+   Donat el programa en pseudo-assembler següent:
+
+   | @log | codi |
+   |-----:|------|
+   | 026h | Reg0 ← 1 |
+   | 027h | Comparar Reg0, 25 |
+   | 028h | Branch_equal to @033h |
+   | 029h | Reg1 ← Reg0 − 1 |
+   | 02Ah | Reg2 ← Reg0 mod 16 |
+   | 02Bh | Reg3 ← Reg0 + 1 |
+   | 02Ch | Load Reg4 ← Mem(@600h + Reg1) |
+   | 02Dh | Load Reg5 ← Mem(@700h + Reg2) |
+   | 02Eh | Load Reg6 ← Mem(@800h + Reg3) |
+   | 02Fh | Reg7 ← Reg4 + Reg5 + Reg6 |
+   | 030h | Store Mem(@600h + Reg3) ← Reg7 |
+   | 031h | Reg0 ← Reg0 + 1 |
+   | 032h | Branch to @027h |
+
+
+    a. Quantes **fallades de pàgina** es produirà en l’execució del programa suposant que l’algorisme de reemplaç és **LRU**? Feu l’esquema que ens mostri com es van omplint les cel·les a mesura que es van produint les fallades de pàgina.
+
+    b. Feu el mateix que en l’apartat anterior suposant ara que l’algorisme de reemplaç és **FIFO**.
+
+    **Nota:**
+    Suposeu que tots els vectors s’emmagatzemen a partir del començament de les pàgines.
+    Per exemple, donat el vector d’enters `A[0…n−1]`,  
+    `A[0]` s’emmagatzemaria en l’adreça `600h`, `A[1]` en `601h`, etc.
+
+2. Disposem d’un sistema amb les característiques següents:
+
+   - **Memòria Virtual (MV)** paginada sota demanda amb **assignació local**  (**4 cel·les per procés**).
+   - **Pàgines de 16 paraules**.
+   - La mida dels **sencers** i de les **instruccions** és d’**una paraula = 1 Byte**.
+
+   ```c
+   main() {
+       int i, A[42], B[40];
+
+       A[0] = 0;
+       A[1] = 0;
+
+       for (i = 0; i < 40; i++) {
+           A[i+2] = A[i] + B[i];
+       }
+   }
+   ```
+
+   | @(h) | codi                           | comentaris           |
+   | ---: | ------------------------------ | -------------------- |
+   | 0027 | Store Mem(@0500) ← 0           | A[0] = 0             |
+   | 0028 | Store Mem(@0500 + 1) ← 0       | A[1] = 0             |
+   | 0029 | Reg0 ← 0                       | i = 0                |
+   | 002A | Comparar Reg0, 40              | for                  |
+   | 002B | Branch_equal to @0033          |                      |
+   | 002C | Load Reg1 ← Mem(@0500 + Reg0)  | Reg1 = A[i]          |
+   | 002D | Load Reg2 ← Mem(@0600 + Reg0)  | Reg2 = B[i]          |
+   | 002E | Reg3 ← Reg2 + Reg1             |                      |
+   | 002F | Reg4 ← Reg0 + 2                |                      |
+   | 0030 | Store Mem(@0500 + Reg4) ← Reg3 | A[i+2] = A[i] + B[i] |
+   | 0031 | Reg0 ← Reg0 + 1                | i = i + 1            |
+   | 0032 | Branch to @002A                |                      |
+
+   Calcular el nombre de fallades de pàgina que es produeixen durant l’execució del programa, segons l’algorisme de reemplaç LRU i FIFO. Fer l’esquema de com es van omplint les cel·les a mesura que es van produint les fallades de pàgina.
+
