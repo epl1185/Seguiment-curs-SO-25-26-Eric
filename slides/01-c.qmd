@@ -1195,6 +1195,9 @@ capta_dades(int n, int* nums) {
 }
 ```
 
+## Video Resumit de Heap VS Stack (en anglès)
+- https://www.youtube.com/watch?v=_8-ht2AKyH4.
+
 # Structs i TypeDef
 
 ## Qué són els structs?
