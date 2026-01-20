@@ -1,5 +1,6 @@
 /* Suposeu la següent execució:
     ./my_Strlen GeometryDash
+    Sortida : 12
 */
 
 #include <stdio.h> //Crida a sistema
