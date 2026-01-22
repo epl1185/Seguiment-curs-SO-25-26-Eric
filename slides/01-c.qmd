@@ -1487,7 +1487,7 @@ int checkParells(int* suma, partit** partits)
     return count;
 }
 ```
-- Digueu que hauriem de canviar a nivell de sintaxi en el codi si en compte de tenir:  
+- Digueu que hauriem de canviar a nivell de  en el codi si en compte de tenir:  
 ```c
  partit** partits = malloc(MIDA * sizeof(partit *));
 ```
