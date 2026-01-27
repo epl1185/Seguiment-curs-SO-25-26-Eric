@@ -419,7 +419,7 @@ En el llenguatge de programació C, la directiva **#include** diu al preprocessa
 ## Include: Header més improtants {.smaller}
 
 | Header | Funcionalitat |
-|-----------------|-------------------------------------------------------|
+|-------------------|-----------------------------------------------------|
 | stdio | Subministra entrada i sortida: funcions *FILE, stdin, stdout, stderr i fprint()*. |
 | stdlib | Subministra funcions d'utilitat: *malloc(), calloc() i realloc()*. |
 | unistd | Subministraments *EXIT_FAILURE, EXIT_SUCCESS*. |
@@ -1196,7 +1196,8 @@ capta_dades(int n, int* nums) {
 ```
 
 ## Video Resumit de Heap VS Stack (en anglès)
-- https://www.youtube.com/watch?v=_8-ht2AKyH4.
+
+-   https://www.youtube.com/watch?v=\_8-ht2AKyH4.
 
 # Structs i TypeDef
 
@@ -1337,28 +1338,29 @@ int my_strlen(char * str)
 }
 ```
 
--   **(1)**:
+## Respostes als espais de codi
 
+**(1)**: És la manera de crear un string en C
 ``` c
   char *
 ```
 
--   **(2)**:
+**(2)**: Agafem l'string passat per entrada estàndard
 
 ``` c
   1
 ```
 
--   **(3)**:
+**(3)**: str* apunta a la lletra de cada string.
 
 ``` c
   *str
 ```
 
--   **(4)**:
+**(4)**:Anem a la següent posició (lletra) de l'string
 
 ``` c
-  str
+  str++
 ```
 
 ::: center-container
@@ -1368,39 +1370,47 @@ Fitxer: [sources/my_Strlen.c](./01-sources/sources/my_Strlen.c)
 ## Completeu el codi
 
 ### Enunciat
+::::: columns
+::: {.column width="45%"}
+1.Es considera una matriu `m` de mida **MIDA × MIDA** on cada posició `(i,j)` representa el resultat d’un partit entre els equips *i* i *j*:
 
-Es considera una matriu `m` de mida **MIDA × MIDA** on cada posició `(i,j)`
-representa el resultat d’un partit entre els equips *i* i *j*:
+-   l’equip *i* ha marcat **x** gols\
+-   l’equip *j* ha marcat **y** gols
+:::
 
-- l’equip *i* ha marcat **x** gols  
-- l’equip *j* ha marcat **y** gols  
-
-Es vol determinar **quants partits compleixen**:
+::: {.column width="50%"}
+2.Es vol determinar **quants partits compleixen**:
 
 \[x + y = n\]
 
 on `n` és un enter passat per línia de comandes.
 
-- La matriu es crea amb **memòria dinàmica**
-- Els gols es generen aleatòriament entre **1 i 6**
+-   La matriu es crea amb **memòria dinàmica**
+-   Els gols es generen aleatòriament entre **1 i 6**
+:::
+:::::
 
----
+------------------------------------------------------------------------
 
 ### Exemple d’execució
 
 ./partits 9
 
-1 1  2 2  2 2
+1 1 | 2 2 | 2 2
 
-2 0  6 3  0 0
+2 0 | 6 3 | 0 0
 
-1 1  2 3  1 2
+1 1 | 2 3 | 1 2
 
 El total de partits amb suma 9 son: 1
 
----
+(A la matriu original no hi ha:|)
+
+------------------------------------------------------------------------
+
 ## Codi de la Creació de la Matriu incomplet
-```c
+
+``` c
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -1447,21 +1457,23 @@ int main(int argc, char* argv[])
 
     int suma = /* (5) funció */ (argv[1]);
     int count = checkParells(&suma, partits);
+    //Aneu a la següent diapositiva
 
     printf("El total de partits amb suma %d son: %d\n", suma, count);
 
     for (int i = 0; i < MIDA; i++) {
-        /* (6) Alliberar memòria */
+        /* (7) Alliberar memòria */
     }
-    free(partits);
+    /* (8) Alliberar memòria */
     return 0;
 }
 ```
+
 ## Codi dels mètodes incomplet
-```c
+
+``` c
 int generar_valor() {
     double r = (double) rand() / RAND_MAX;
-    //(7) No podem utilitzar la estructura switch. Digueu el perqué.
     if (r < 0.25) return 0;
     else if (r < 0.5) return 1;
     else if (r < 0.7) return 2;
@@ -1478,7 +1490,7 @@ int checkParells(int* suma, partit** partits)
     {
         for(int j = 0; j < MIDA; j++)
         {
-            if((partits[i][j].golsFavor + partits[i][j].golsContra) == /*(8)*/)
+            if((partits[i][j].golsFavor + partits[i][j].golsContra) == /*(6)*/)
             {
               count++;
             }
@@ -1487,30 +1499,79 @@ int checkParells(int* suma, partit** partits)
     return count;
 }
 ```
-- Digueu que hauriem de canviar a nivell de  en el codi si en compte de tenir:  
-```c
- partit** partits = malloc(MIDA * sizeof(partit *));
-```
-Tinguessim:
-```c
-partit *** partits = malloc(MIDA * sizeof(partit**));
-```
+
+::: center-container
+Fitxer: [sources/partits.c](./01-sources/sources/partits.c)
+:::
+
+
 ## Solucions
-- (0): partits**
-- (1)
+
+- (0): En ser una matriu necessitem un doble apuntador. (Matriu = Vectors de vectors)
 ```c
+ partits**
+```
+- (1): Reservem l'espai per les files. (Matriu = Vectors de vectors)
+``` c
 MIDA * sizeof(partit *)
 ```
-- (2)
-```c
+- (2): Reservem l'espai per a cada partit
+``` c
 MIDA * sizeof(partit)
 ```
-- (3): "." Ja que de l'altra manera estem dient que apuntem a un partit*.
-- (4): El compilador posa valors brossa perquè no existeix cap partits[i][j] que sigui enter
-- (5): atoi(argv[1])
-- (6): free(partits[i])
-- (7): Perquè el switch divideix per casos enters (case 0, case 1, ...) i no per numeros float.
-- (8): *suma (pas de paràmetres)
+- (3): "." De cada partit, en volem els seus atributs
+
+## Solucions{.smaller}
+
+-   (4): No imprimeix correctament perquè partits[i][j] és una estructura, no un enter, i printf amb %d espera un int.
+-   (5): La funció atoi converteix la part inicial de la cadena la qual apunta argv[1] a int
+```c
+atoi(argv[1])
+```
+- (6): Pas de paràmetres
+```c
+*suma
+```
+- (7): Alliberem cada fila.
+```c
+free(partits[i])
+```
+- (8):I finalment les columnes
+```c
+free(partits)
+```
+::: center-container
+Fitxer: [sources/partits.c](./01-sources/sources/partits.c)
+:::
+
+------------------------
+## Observació / Pregunta {.smaller}
+- Que hauriem de canviar a nivell de el codi si en comptes de tenir:
+``` c
+ partit** partits = malloc(MIDA * sizeof(partit *));
+```
+
+Tinguessim:
+``` c
+partit *** partits = malloc(MIDA * sizeof(partit**));
+```
+
+En aquesta estructura de codi:
+```c
+for (int i = 0; i < MIDA; i++) {
+        partits[i] = malloc(/*(1)*/);
+    }
+
+    for (int i = 0; i < MIDA; i++) {
+        for (int j = 0; j < MIDA; j++) {
+            partits[i][j] /* (2) -> o . */ golsFavor  = generar_valor();
+            partits[i][j] /* (2) -> o . */ golsContra = generar_valor();
+        }
+    }
+```
+- (1) Bàsicament que el malloc s'hauria de fer de MIDA * SIZEOF(partit*) perquè cada partit[i][j] apunta a un partit. 
+- (2) I es cambiaria la notació de "." per "->" , pel mateix motiu. (cada partit[i][j] apunta a un partit)
+
 
 ## Exercicis
 
